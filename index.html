@@ -3,298 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIDEO VIP</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
+<title>Undangan Grup</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:linear-gradient(180deg,#0d0d1f,#1a1a3a);color:white}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:#f0f2f5;
+  text-align:center;
+  color:#222;
+}
 
 /* HEADER */
-.topbar{
-  position:fixed;top:0;width:100%;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:12px 15px;background:#111133;z-index:1500;
+.header{
+  background:#ffffff;
+  padding:12px 15px;
+  border-bottom:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.logo{font-weight:700;color:#ff2e63;font-size:18px}
-.search-box{display:flex;width:55%}
-.search-box input{flex:1;padding:7px;border:none;border-radius:6px 0 0 6px}
-.search-box button{padding:7px 12px;border:none;background:#ff2e63;color:white;border-radius:0 6px 6px 0}
-
-/* BANNER */
-.banner{margin-top:70px;padding:10px}
-.banner img{width:100%;border-radius:10px;max-height:90px;object-fit:cover}
-
-/* TITLE */
-.section-title{padding:10px 15px;font-size:18px;font-weight:500}
-
-/* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:10px}
-
-.card{
-background:#1f1f3d;border-radius:12px;overflow:hidden;
-transition:.3s;cursor:pointer;position:relative;
-}
-.card:hover{transform:scale(1.05)}
-
-.thumb{
-width:100%;height:120px;background-size:cover;background-position:center;
-display:flex;align-items:center;justify-content:center;position:relative;
+.menu-icon{ font-size:24px; }
+.brand{ display:flex; align-items:center; gap:8px; }
+.brand img{ height:26px; }
+.brand-name{ font-weight:700; color:#25d366; font-size:18px; }
+.download-icon{
+  background:#25d366;
+  width:36px; height:36px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:white; font-size:18px;
 }
 
-.thumb::after{
-content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,.35);
+/* CONTENT */
+.card{ margin-top:40px; padding:20px; }
+.group-photo{
+  width:120px; height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+.group-name{ font-size:22px; font-weight:600; margin-top:15px; }
+.subtitle{ color:#667781; margin-top:8px; }
+
+.join-btn{
+  margin-top:25px;
+  background:#008069;
+  color:white;
+  border:none;
+  padding:15px;
+  font-size:18px;
+  border-radius:28px;
+  width:85%;
+  max-width:340px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-.duration{
-position:absolute;bottom:6px;right:6px;
-background:rgba(0,0,0,0.7);padding:2px 6px;
-font-size:12px;border-radius:4px;z-index:2;
+/* FOOTER AREA */
+.footer-area{
+  margin-top:60px;
+  background:#111b21;
+  padding:35px 20px;
+  color:white;
 }
 
-.play-btn{
-position:relative;z-index:2;font-size:34px;color:white;
-background:rgba(0,0,0,.5);width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-transition:.3s;
+/* BIG DOWNLOAD BUTTON */
+.big-download{
+  background:#25d366;
+  color:black;
+  padding:16px 35px;
+  border-radius:35px;
+  font-weight:bold;
+  font-size:18px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  margin-bottom:30px;
 }
-.card:hover .play-btn{transform:scale(1.2);background:#ff2e63}
 
-.video-title{padding:8px;font-size:13px}
-.counter{position:absolute;top:8px;left:10px;font-size:12px;opacity:.8}
-
-/* MODAL */
-.modal{
-display:none;position:fixed;z-index:3000;left:0;top:0;
-width:100%;height:100%;background:rgba(0,0,0,0.9);
-backdrop-filter:blur(8px);justify-content:center;align-items:center;
+/* SOCIALS */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  margin-bottom:30px;
 }
-.modal-content{width:95%;max-width:900px;position:relative}
-.modal iframe{width:100%;height:500px;border-radius:12px}
-.close{position:absolute;top:-40px;right:0;font-size:40px;cursor:pointer}
+.socials a{
+  width:48px; height:48px;
+  border-radius:50%;
+  border:2px solid #5f6c72;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
 
-footer{text-align:center;padding:25px;background:black;margin-top:40px;opacity:.6}
+/* BRAND FOOTER */
+.brand-footer{
+  border-top:1px solid #2a3942;
+  padding-top:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  font-size:18px;
+  font-weight:600;
+}
+.brand-footer img{ height:26px; }
 </style>
 </head>
-
 <body>
 
-<header class="topbar">
-  <div class="logo">VIDEO 21+</div>
-  <div class="search-box">
-    <input type="text" placeholder="Cari video...">
-    <button>Cari</button>
+<!-- HEADER -->
+<div class="header">
+  <div class="menu-icon">☰</div>
+  <div class="brand">
+    <img id="brandLogo" src="">
+    <div class="brand-name" id="brandName"></div>
   </div>
-</header>
-
-<div class="banner">
-  <a href="https://doodstream.com/join/6xwdpgids1a2" target="_blank">
-    <img style="width:100%;height:auto;max-width:720px;"
-         src="//i.doodcdn.io/img/728x90.gif"
-         alt="DoodStream - Upload videos share & make money">
-  </a>
+  <div class="download-icon" onclick="goDownload()">⬇</div>
 </div>
 
-<div class="section-title">Video Terbaru</div>
-
-<div class="grid">
-
-<div class="card" onclick="openVideo('https://kesukaan-pria.site/5aK0fW', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/sdb073-screenshot_20260201-122032_chrome.jpg?versionId=dSUv1Au0u9RMRCaob8Tr6rQEc22Xt2n9')">
-    <div class="duration">01:09</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
+<!-- INVITE CARD -->
+<div class="card">
+  <img id="groupPhoto" class="group-photo">
+  <div class="group-name" id="groupName"></div>
+  <div class="subtitle">Anda diundang untuk bergabung ke grup</div>
+  <button class="join-btn" onclick="goAd()">Bergabung ke Chat</button>
 </div>
 
-  <div class="card" onclick="openVideo('https://kesukaan-pria.site/0ZMTKz', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/yiixr--screenshot_20260201-122103_chrome.jpg?versionId=2RCRCWWanpJ0rcty5u0Zb3tc_6nWl8_8')">
-    <div class="duration">01:09</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
+<!-- FOOTER -->
+<div class="footer-area">
+
+  <a href="#" class="big-download" onclick="goDownload()">Unduh ⬇</a>
+
+  <div class="socials">
+    <a id="linkX" href="#">X</a>
+    <a id="linkYT" href="#">▶</a>
+    <a id="linkIG" href="#">@</a>
+    <a id="linkFB" href="#">f</a>
   </div>
 
-<div class="card" onclick="openVideo('https://myvidplay.com/d/fpea8maj2h36', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/63hzr6-4cu1j7uqgd63xdbb.jpg?versionId=uQ.3LXWkhTMbAxsfM.UUctK3OEKuA2FW')">
-    <div class="duration">02:44</div>
-    <div class="play-btn">▶</div>
+  <div class="brand-footer">
+    <img id="brandLogoFooter" src="">
+    <span id="brandNameFooter"></span>
   </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://doodss.space/KhpoJYS61', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/twr0j4-screenshot_20260201-132052_chrome.jpg?versionId=eS84InErTKgyQEAKqLKmzVm_ttppepbG')">
-    <div class="duration">00:11</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title">eror</div>
-</div>
-
-<div class="card" onclick="openVideo('https://myvidplay.com/d/2ko9hqr8mruu', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/giw54j-56g3z60g8rc1ikfb.jpg?versionId=0CETRo70DbsyAF2UKeHGVgwpD9mVMDJ5')">
-    <div class="duration">03:31</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo(https://doodss.space/w5EeTHRw1, this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/t1sf5--screenshot_20260201-132406_chrome.jpg?versionId=LsUoySgVEYGPJ4EIM4M8N2IbjkZiUbE_')">
-    <div class="duration">01:29</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title">eror</div>
-</div>
-
-<div class="card" onclick="openVideo('https://kesukaan-pria.site/NQ2tqT', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/-rakx--screenshot_20260201-125740_chrome.jpg?versionId=7xIQd2UH7g5g3nAgQm.1aojUhfQFbSCo')">
-    <div class="duration">04:29</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://myvidplay.com/d/50vkxkaat1y3', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/em2-82-7xuiy14e39cbrtd5.jpg?versionId=_A.kXAD85wWIsxpbv27yc7PNimBHbnk6')">
-    <div class="duration">05:09</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://myvidplay.com/d/yt7ro96h1j2c', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/4x3ivv-trvcvb928rqrpspd.jpg?versionId=5cWBsyxjgIYWOoxJM3pA9_qaZr1FqVYM')">
-    <div class="duration">02:00</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://myvidplay.com/d/0flhmpuelxmw', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/4-6o7g-5rgjqdnybwydv0e2.jpg?versionId=sdaeTkj2hgfWFbag4hVkVfgw8NVdJMo8')">
-    <div class="duration">04:39</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://doodss.space/gKt13X0D1', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/yb1wvu-screenshot_20260201-132550_chrome.jpg?versionId=KE6MaJxwf.7XRRyLvHaYjL_gRuxha9Nu')">
-    <div class="duration">03:13</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title">eror</div>
-</div>
-
-<div class="card" onclick="openVideo('https://myvidplay.com/d/kyenq5d63vem', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/0bhwx7-pkjru3pb3c1suzot.jpg?versionId=2Gn5J4tABz9MUnb5O60v8Mf1O44HjM7G')">
-    <div class="duration">10:00</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://kesukaan-pria.site/VvBlJj', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/2okepm-screenshot_20260201-131632_chrome.jpg?versionId=G_lAZAHBR8WQv06i74UYD.lC02701jxx')">
-    <div class="duration">06:05</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://myvidplay.com/d/dlomuiks6zl5', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/vga9ke-tt9f5rbmmws6oy7j.jpg?versionId=fEtIe0bvYgaH6TseWCT46enVXiCvRlrY')">
-    <div class="duration">11:20</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://kesukaan-pria.site/1NDKQO', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/hj8d0b-screenshot_20260201-133547_chrome.jpg?versionId=0UxlX.s0U543uD_Y7NbRDeZ2jxWGgbQl')">
-    <div class="duration">08:29</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title">eror</div>
-</div>
-
-<div class="card" onclick="openVideo('https://myvidplay.com/d/fxj29hirwn3t', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/ku8d-2-mamjb1e6r4civk9u.jpg?versionId=U2ETa_wV9c8XPe4qVTxHwvqX2Kay1_rR')">
-    <div class="duration">07:09</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
-<div class="card" onclick="openVideo('https://kesukaan-pria.site/7Vlwk4', this)">
-  <div class="counter">0 views</div>
-  <div class="thumb" style="background-image:url('https://cdn.store.link/products/gorooshop9948990/zyy49b-screenshot_20260201-131604_chrome.jpg?versionId=X3rk7NxHFE7NxFDBQZ3A.oAgS3FIEA4d')">
-    <div class="duration">03:42</div>
-    <div class="play-btn">▶</div>
-  </div>
-  <div class="video-title"></div>
-</div>
-
 
 </div>
-
-<!-- MODAL PLAYER -->
-<div id="videoModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
-
-<footer>© 2026 NightStream</footer>
 
 <script>
-// Load view count
-document.querySelectorAll('.card').forEach((card,index)=>{
-  let key="views_"+index;
-  let saved=localStorage.getItem(key)||0;
-  card.querySelector('.counter').innerText=saved+" views";
-});
+/* ========= PENGATURAN MUDAH ========= */
+const BRAND_NAME = "WhatsApp";
 
-function openVideo(link,el){
-  let index=[...document.querySelectorAll('.card')].indexOf(el);
-  let key="views_"+index;
-  let count=parseInt(localStorage.getItem(key)||0)+1;
-  localStorage.setItem(key,count);
-  el.querySelector('.counter').innerText=count+" views";
+/* LOGO ATAS & BAWAH BERBEDA */
+const BRAND_LOGO_TOP = "https://cdn.store.link/products/gorooshop9948990/yydxnm-ikon-panggilan-whatsapp-psd-dapat-diedit_314999-3666.jpg?versionId=Efv9dc_T6rfOr98Qpvih0LakDxeqYZvg";
+const BRAND_LOGO_BOTTOM = "https://cdn.store.link/products/gorooshop9948990/h41u8q-logo%20whatsapp%20putih%20png%20transparent%20download.jpeg?versionId=SdLZBAoqUj87lXs4p568b0sVZNjfK0CU";
 
-  document.getElementById("videoFrame").src=link;
-  document.getElementById("videoModal").style.display="flex";
-}
+const GROUP_NAME = "💦☆Hyper☆💦";
+const GROUP_PHOTO = "https://cdn.store.link/products/gorooshop9948990/nv7vhk-787e90f8-8fb4-4b5b-b20d-2f37a4aa8882.jpeg?versionId=wP2jubzKj6.EzhFZE48.8bOktxDESy3M";
+const AD_LINK = "https://link-iklan.com";
+const DOWNLOAD_LINK = "https://link-download.com";
 
-function closeModal(){
-  document.getElementById("videoModal").style.display="none";
-  document.getElementById("videoFrame").src="";
-}
+/* LINK SOSMED */
+const LINK_X  = "#";
+const LINK_YT = "#";
+const LINK_IG = "#";
+const LINK_FB = "#";
+/* ==================================== */
 
-window.onclick=function(e){
-  let modal=document.getElementById("videoModal");
-  if(e.target==modal){closeModal();}
-}
+document.getElementById("brandName").innerText = BRAND_NAME;
+document.getElementById("brandNameFooter").innerText = BRAND_NAME;
+
+/* LOGO BERBEDA */
+document.getElementById("brandLogo").src = BRAND_LOGO_TOP;
+document.getElementById("brandLogoFooter").src = BRAND_LOGO_BOTTOM;
+
+document.getElementById("groupName").innerText = GROUP_NAME;
+document.getElementById("groupPhoto").src = GROUP_PHOTO;
+
+document.getElementById("linkX").href = LINK_X;
+document.getElementById("linkYT").href = LINK_YT;
+document.getElementById("linkIG").href = LINK_IG;
+document.getElementById("linkFB").href = LINK_FB;
+
+function goAd(){ window.location.href = AD_LINK; }
+function goDownload(){ window.location.href = DOWNLOAD_LINK; 
+ }
 </script>
 
 </body>
-</html> 
+</html>
